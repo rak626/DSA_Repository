@@ -16,9 +16,9 @@ LinkedListNode<int> *reverseLinkedList(LinkedListNode<int> *head)
 }
 
 // using recursion
-LinkNode *reverse(ListNode *head)
+ListNode *reverse(ListNode *head)
 {
-  if (!head and !head->next)
+  if (!head or !head->next)
     return head;
 
   ListNode *newHead = reverse(head->next);
