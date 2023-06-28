@@ -8,18 +8,18 @@
 // method 3 :
 
 class Solution {
-  TreeNode *buildBST(vector<int> &preorder, int &idx, int upperBound) {
-    if (idx == preorder.size() or preorder[idx] > upperBound)
-      return nullptr;
-    TreeNode *root = new TreeNode(preorder[idx++]);
-    root->left = buildBST(preorder, idx, root->val);
-    root->right = buildBST(preorder, idx, upperBound);
-    return root;
-  }
+    TreeNode *buildBST(vector<int> &preorder, int &idx, int upperBound) {
+        if (idx == preorder.size() or preorder[idx] > upperBound)
+            return nullptr;
+        TreeNode *root = new TreeNode(preorder[idx++]);
+        root->left = buildBST(preorder, idx, root->val);
+        root->right = buildBST(preorder, idx, upperBound);
+        return root;
+    }
 
 public:
-  TreeNode *bstFromPreorder(vector<int> &preorder) {
-    int idx = 0;
-    return buildBST(preorder, idx, INT_MAX);
-  }
+    TreeNode *bstFromPreorder(vector<int> &preorder) {
+        int idx = 0;
+        return buildBST(preorder, idx, INT_MAX);
+    }
 };

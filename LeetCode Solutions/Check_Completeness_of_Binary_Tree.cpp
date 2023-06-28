@@ -4,14 +4,14 @@ public:
         queue<TreeNode*> q;
         q.push(root);
         bool gotNull = false;
-        while(q.size()){
+        while (q.size()) {
             TreeNode* node = q.front();
             q.pop();
 
-            if(node == nullptr){
+            if (node == nullptr) {
                 gotNull = true;
             } else {
-                if(gotNull) return false;
+                if (gotNull) return false;
                 q.push(node->left);
                 q.push(node->right);
             }

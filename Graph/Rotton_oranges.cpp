@@ -37,7 +37,8 @@ public:
             for (int i = 0; i < 4; i++) {
                 int dr = r + dx[i];
                 int dc = c + dy[i];
-                if (dr >= 0 and dr < n and dc >= 0 and dc < m and vis[dr][dc] == 0 and grid[dr][dc] == 1) {
+                if (dr >= 0 and dr < n and dc >= 0 and dc < m and
+                    vis[dr][dc] == 0 and grid[dr][dc] == 1) {
                     q.push({{dr, dc}, t + 1});
                     vis[dr][dc] = 2;
                 }
