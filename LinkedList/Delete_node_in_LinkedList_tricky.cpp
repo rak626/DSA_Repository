@@ -3,8 +3,7 @@
 ============================================*/
 
 void deleteNode(LinkedListNode<int> *node) {
-  if (!node)
-    return;
-  node->data = node->next->data;
-  node->next = node->next->next;
+    if (!node) return;
+    node->data = node->next->data;
+    node->next = node->next->next;
 }
