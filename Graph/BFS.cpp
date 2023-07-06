@@ -24,3 +24,9 @@ public:
         return bfs;
     }
 };
+
+/* 
+T.C. -> undirected graph : O(V) + O(2 * E);
+     -> directed graph :  O(V) + O(E);
+S.C. -> O(3 * N), including adjacency list.
+ */

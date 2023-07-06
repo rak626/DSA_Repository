@@ -7,7 +7,7 @@ class Solution {
         if (level == rightView.size()) {
             rightView.push_back(root->val);
         }
-        // alternet left and right if its Left View
+        // alternate left and right if its Left View
         findRightSideView(root->right, level + 1, rightView);
         findRightSideView(root->left, level + 1, rightView);
     }

@@ -9,14 +9,12 @@ Node *rotate(Node *head, int k) {
         t = t->next;
     }
     k = k % len;
-    if (k == 0) return head;
+    int end = len - k-1;
     t->next = head;
     Node *s = head;
-    for (int i = 1; i < len - k; i++) {
-        s = s->next;
-    }
+    while (end--) s = s->next;
     head = s->next;
-    s->next = NULL;
+    s->next = nullptr;
     return head;
 }
 /*

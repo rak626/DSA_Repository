@@ -1,7 +1,7 @@
 // Minimum Number of Platforms
 
 #include <bits/stdc++.h>
-int calculateMinPatforms(int at[], int dt[], int n) {
+int calculateMinPlatforms(int at[], int dt[], int n) {
     sort(at, at + n);
     sort(dt, dt + n);
     int i = 0, j = 0;

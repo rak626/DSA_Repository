@@ -48,7 +48,7 @@ public:
     }
 };
 
-// optimised solution using one stacks
+// optimized solution using one stacks
 class Solution {
     void postorder(TreeNode *root, vector<int> &ans) {
         if (root == nullptr) return;
@@ -81,5 +81,39 @@ public:
         vector<int> ans;
         postorder(root, ans);
         return ans;
+    }
+};
+
+// own made solution which is more easy to understand
+
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode *root) {
+        vector<int> postorder;
+        if (!root) return postorder;
+        stack<TreeNode *> st;
+        TreeNode *cur = root;
+
+        while (cur or st.size()) {
+            if (cur) {
+                st.push(cur);
+                cur = cur->left;
+            } else {
+                TreeNode *temp = st.top()->right;
+                if (temp) {
+                    cur = temp;
+                } else {
+                    TreeNode *popOut = st.top();
+                    st.pop();
+                    postorder.push_back(popOut->val);
+                    while (st.size() and popOut == st.top()->right) {
+                        popOut = st.top();
+                        st.pop();
+                        postorder.push_back(popOut->val);
+                    }
+                }
+            }
+        }
+        return postorder;
     }
 };
