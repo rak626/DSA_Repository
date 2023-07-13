@@ -6,6 +6,7 @@ public:
         map<int, map<int, multiset<int>>> nodes;
         queue<pair<TreeNode *, pair<int, int>>> todo;
         todo.push({root, {0, 0}});
+        
         while (!todo.empty()) {
             TreeNode *temp = todo.front().first;
             int vt = todo.front().second.first;
