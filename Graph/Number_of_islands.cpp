@@ -24,7 +24,7 @@ public:
         // Code here
         int n = grid.size(), m = grid[0].size();
 
-        // dfs prerequisit
+        // dfs prerequisite
 
         vector<vector<bool>> vis(n, vector<bool>(m, 0));
 
