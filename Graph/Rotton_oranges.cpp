@@ -52,3 +52,30 @@ public:
         return tm;
     }
 };
+
+/* 
+To summarize:
+- Time Complexity: O(n * m)
+- Space Complexity: O(n * m)
+
+
+Time Complexity:
+1. Initializing the `vis` array takes O(n * m) time, where n is the number of rows and m is the number of columns in the grid.
+2. The loop to find the initial rotten oranges takes O(n * m) time as well, since we iterate through the entire grid once.
+3. The BFS (Breadth-First Search) traversal of the grid takes O(n * m) time. In the worst case, all cells might be pushed into the queue.
+4. During the BFS, for each cell, we check its neighbors in all four directions. Since there are at most four neighbors for each cell, the neighbor check takes constant time for each cell.
+5. Overall, the BFS traversal takes O(n * m) time.
+
+So, the total time complexity is O(n * m).
+
+Space Complexity:
+1. The `vis` array is used to keep track of visited cells and takes O(n * m) space since it has the same dimensions as the grid.
+2. The queue `q` can store at most all the cells in the grid in the worst case, which would be O(n * m) space.
+3. The direction arrays `dx` and `dy` each have a constant size of 4, so they take O(1) space.
+4. There are some additional integer variables used for temporary calculations, but they occupy constant space and do not depend on the size of the grid.
+
+So, the total space complexity is O(n * m).
+
+
+Both the time and space complexities are linear in terms of the number of rows and columns in the grid, making the solution efficient for relatively small grids. 
+*/
