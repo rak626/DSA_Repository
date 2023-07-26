@@ -1,0 +1,28 @@
+{
+    "files.autoSave": "onFocusChange",
+    "workbench.colorTheme": "Solarized+",
+    "C_Cpp.autocompleteAddParentheses": true,
+    "editor.fontSize": 18,
+    "acmx.configuration.library": "$HOME/Documents/Contests",
+    "acmx.template.solutionPath": "/home/rakesh/bashsamples/template.cpp",
+    "workbench.startupEditor": "none",
+    "C_Cpp.autocomplete": "disabled",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "keyword.control",
+                    "keyword.operator",
+                    "keyword.other"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "editor.mouseWheelZoom": true,
+    "editor.formatOnSave": true,
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: true, IndentCaseLabels: true, ColumnLimit: 0, AccessModifierOffset: -4, NamespaceIndentation: All, FixNamespaceComments: false }"
+}
