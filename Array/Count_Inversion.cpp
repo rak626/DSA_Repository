@@ -4,8 +4,7 @@ Count Inversion
 
 #include <bits/stdc++.h>
 
-void merge(long long *arr, long long *temp, int s, int mid, int e,
-           long long int &cnt) {
+void merge(long long *arr, long long *temp, int s, int mid, int e,long long int &cnt) {
     int i = s;
     int j = mid + 1;
     int k = s;
@@ -26,8 +25,7 @@ void merge(long long *arr, long long *temp, int s, int mid, int e,
     // copying temp elements  back to the array
     for (int i = s; i <= e; i++) arr[i] = temp[i];
 }
-void mergesort(long long *arr, long long *temp, int s, int e,
-               long long int &cnt) {
+void mergesort(long long *arr, long long *temp, int s, int e, long long int &cnt) {
     if (s >= e) return;
     int mid = s + (e - s) / 2;
     mergesort(arr, temp, s, mid, cnt);
