@@ -62,7 +62,7 @@ public:
             nextHigherFreqList = freqMap[node->cnt + 1];
         }
         nextHigherFreqList->addFront(node);  // add node front of the list
-        node->cnt += 1;  // making new cnt for that node to maintain new freq
+        node->cnt += 1;                      // making new cnt for that node to maintain new freq
         freqMap[node->cnt] =
             nextHigherFreqList;     // update that list in freq Map
         keyNode[node->key] = node;  // update that key in keynode map
