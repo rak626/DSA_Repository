@@ -1,15 +1,14 @@
 class Solution {
 public:
-    // Function to return Breadth First Traversal of given graph.
     vector<int> bfsOfGraph(int n, vector<int> adj[]) {
-        // Code here
-        // initial setup
+        // initial setup of vis array and queue
         int vis[n] = {0};
         vis[0] = 1;
         queue<int> q;
         q.push(0);
-
         vector<int> bfs;
+
+        // run bfs
         while (q.size()) {
             int node = q.front();
             q.pop();
@@ -25,7 +24,7 @@ public:
     }
 };
 
-/* 
+/*
 T.C. -> undirected graph : O(V) + O(2 * E);
      -> directed graph :  O(V) + O(E);
 S.C. -> O(3 * N), including adjacency list.

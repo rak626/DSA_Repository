@@ -7,8 +7,7 @@ public:
     int di[4] = {0, 1, 0, -1};
     int dj[4] = {1, 0, -1, 0};
 
-    void dfs(int sr, int sc, int n, int m, vector<vector<int>> &image2,
-             int newColor, int initColor) {
+    void dfs(int sr, int sc, int n, int m, vector<vector<int>> &image2, int newColor, int initColor) {
         image2[sr][sc] = newColor;
         for (int i = 0; i < 4; i++) {
             int calRow = sr + di[i];
@@ -21,11 +20,10 @@ public:
         }
     }
 
-    vector<vector<int>> floodFill(vector<vector<int>> &image, int sr, int sc,
-                                  int newColor) {
-        // Code here
+    vector<vector<int>> floodFill(vector<vector<int>> &image, int sr, int sc, int newColor) {
         int n = image.size(), m = image[0].size();
 
+        // create aux image, not to temper original data
         vector<vector<int>> image2 = image;
 
         int initColor = image[sr][sc];

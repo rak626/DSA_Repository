@@ -1,10 +1,6 @@
 class Solution {
-    // 2. run bfs and find out how many time needed to rot all the oranges
-
 public:
-    // Function to find minimum time required to rot all oranges.
     int orangesRotting(vector<vector<int>> &grid) {
-        // Code here
         int n = grid.size();
         int m = grid[0].size();
 
@@ -13,6 +9,8 @@ public:
 
         int vis[n][m];
 
+        // load all rot position into the queue
+        // and mark them into visited array
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (grid[i][j] == 2) {
@@ -28,6 +26,7 @@ public:
         int dy[4] = {1, 0, -1, 0};
 
         int tm = 0;
+        // run bfs
         while (!q.empty()) {
             int r = q.front().first.first;
             int c = q.front().first.second;
@@ -44,6 +43,7 @@ public:
                 }
             }
         }
+        // after completing bfs, check is there any fresh oranges left
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (grid[i][j] == 1 and vis[i][j] != 2) return -1;
@@ -53,7 +53,7 @@ public:
     }
 };
 
-/* 
+/*
 To summarize:
 - Time Complexity: O(n * m)
 - Space Complexity: O(n * m)
@@ -77,5 +77,5 @@ Space Complexity:
 So, the total space complexity is O(n * m).
 
 
-Both the time and space complexities are linear in terms of the number of rows and columns in the grid, making the solution efficient for relatively small grids. 
+Both the time and space complexities are linear in terms of the number of rows and columns in the grid, making the solution efficient for relatively small grids.
 */

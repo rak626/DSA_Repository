@@ -1,3 +1,4 @@
+// logic will be same as bfs.
 bool dectectCycleDfs(int src, int parent, vector<vector<int>>& adj, vector<bool>& vis) {
     vis[src] = true;
 
@@ -13,15 +14,16 @@ bool dectectCycleDfs(int src, int parent, vector<vector<int>>& adj, vector<bool>
 }
 
 string cycleDetection(vector<vector<int>>& edges, int n, int m) {
+    // create adj list
     vector<vector<int>> adj(n + 1);
-
     for (int i = 0; i < m; i++) {
         adj[edges[i][0]].push_back(edges[i][1]);
         adj[edges[i][1]].push_back(edges[i][0]);
     }
-
+    // create visited array
     vector<bool> vis(n + 1);
 
+    // detect cycle in connected components
     for (int i = 1; i < n; i++) {
         if (!vis[i]) {
             if (dectectCycleDfs(i, -1, adj, vis)) return "Yes";
