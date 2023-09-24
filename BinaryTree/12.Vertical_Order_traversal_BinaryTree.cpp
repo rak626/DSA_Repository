@@ -1,33 +1,32 @@
 // Vertical Order Traversal of a Binary Tree
-
 class Solution {
 public:
-    vector<vector<int>> verticalTraversal(TreeNode *root) {
-        map<int, map<int, multiset<int>>> nodes;
-        queue<pair<TreeNode *, pair<int, int>>> todo;
-        todo.push({root, {0, 0}});
-        
-        while (!todo.empty()) {
-            TreeNode *temp = todo.front().first;
-            int vt = todo.front().second.first;
-            int hr = todo.front().second.second;
-            todo.pop();
-            nodes[vt][hr].insert(temp->val);
-            if (temp->left) {
-                todo.push({temp->left, {vt - 1, hr + 1}});
-            }
-            if (temp->right) {
-                todo.push({temp->right, {vt + 1, hr + 1}});
-            }
+    vector<vector<int>> verticalTraversal(TreeNode* root) {
+        vector<vector<int>> res;
+        if (not root) return res;
+        map<int, map<int, multiset<int>>> mp;
+        queue<pair<TreeNode*, pair<int, int>>> q;
+
+        q.push({root, {0, 0}});
+
+        while (q.size()) {
+            TreeNode* node = q.front().first;
+            int level = q.front().second.first;
+            int width = q.front().second.second;
+            q.pop();
+            mp[width][level].insert(node->val);
+            if (node->left) q.push({node->left, {level + 1, width - 1}});
+            if (node->right) q.push({node->right, {level + 1, width + 1}});
         }
-        vector<vector<int>> ans;
-        for (auto p : nodes) {
-            vector<int> col;
-            for (auto q : p.second) {
-                col.insert(col.end(), q.second.begin(), q.second.end());
+        for (auto it1 : mp) {
+            vector<int> ans;
+            for (auto it2 : it1.second) {
+                for (auto it3 : it2.second) {
+                    ans.push_back(it3);
+                }
             }
-            ans.push_back(col);
+            res.push_back(ans);
         }
-        return ans;
+        return res;
     }
 };
