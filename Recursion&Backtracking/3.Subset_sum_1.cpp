@@ -6,8 +6,9 @@ void findSum(vector<int> &num, int idx, int sum, vector<int> &ans) {
         ans.push_back(sum);
         return;
     }
-
+    // not pick
     findSum(num, idx + 1, sum, ans);
+    // pick
     findSum(num, idx + 1, sum + num[idx], ans);
 }
 

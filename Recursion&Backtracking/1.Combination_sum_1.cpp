@@ -3,8 +3,7 @@
 // leetcode Sol
 class Solution {
 public:
-    void findSubset(vector<int> &arr, int idx, int k, vector<int> &ds,
-                    vector<vector<int>> &ans) {
+    void findSubset(vector<int> &arr, int idx, int k, vector<int> &ds, vector<vector<int>> &ans) {
         if (idx == arr.size()) {
             if (k == 0) {
                 ans.push_back(ds);
@@ -30,8 +29,7 @@ public:
 
 #include <bits/stdc++.h>
 
-void findSubset(vector<int> &arr, int idx, int k, vector<int> &ds,
-                vector<vector<int>> &ans) {
+void findSubset(vector<int> &arr, int idx, int k, vector<int> &ds, vector<vector<int>> &ans) {
     if (idx == arr.size()) {
         if (k == 0) {
             ans.push_back(ds);
