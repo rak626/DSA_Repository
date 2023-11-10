@@ -2,7 +2,7 @@
 
 class Solution {
 public:
-    int longestPalinSubseq(string A) {
+    int longestPalindromeSubsequence(string A) {
         string text1 = A;
         string text2 = A;
         reverse(text2.begin(), text2.end());
